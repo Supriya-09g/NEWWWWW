@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>bikes — Payment & Booking</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body class="page-payments">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">bikes</span>
+        <small class="tag">Old-School Motorcycle Co.</small>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Bikes</a>
+        <a href="payments.html" class="nav-link active">Payments</a>
+        <a href="thankyou.html" class="nav-link">Thank You</a>
+      </nav>
+
+      <div class="cart-preview" id="miniCartPreviewPayments">
+        <button id="openCartBtnPayments" class="btn-ghost">Cart (<span id="cartCountPayments">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container checkout-section">
+      <div class="checkout-grid">
+        <!-- Form -->
+        <div class="checkout-form card">
+          <h2>Booking &amp; Payment</h2>
+          <p class="muted">Fill details to complete booking. Payment is simulated for this demo.</p>
+
+          <form id="checkoutForm" novalidate>
+            <div class="form-row">
+              <label for="fullName">Full Name</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Your full name" required>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="+91 9XXXXXXXXX" required>
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-row">
+              <label for="address">Address</label>
+              <textarea id="address" name="address" placeholder="Street, City, State, ZIP" rows="3" required></textarea>
+            </div>
+
+            <fieldset class="form-row">
+              <legend>Payment (Simulated)</legend>
+              <div class="small-inputs">
+                <input id="cardName" name="cardName" type="text" placeholder="Cardholder name" required>
+                <input id="cardNumber" name="cardNumber" type="text" placeholder="1234 5678 9012 3456" required>
+                <div class="inline">
+                  <input id="exp" name="exp" type="text" placeholder="MM/YY" required>
+                  <input id="cvv" name="cvv" type="text" placeholder="CVV" required>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-row">
+              <button class="btn btn-primary" type="submit">Pay & Book</button>
+              <button class="btn btn-outline" type="button" id="backToProducts">Back to Bikes</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="order-summary card" aria-labelledby="summaryTitle">
+          <h3 id="summaryTitle">Order Summary</h3>
+
+          <div id="orderItems" class="order-items">
+            <!-- populated by main.js -->
+            <p class="muted">No items in cart. <a href="products.html">Browse bikes</a></p>
+          </div>
+
+          <div class="summary-totals">
+            <p>Subtotal: <strong id="summarySubtotal">₹0</strong></p>
+            <p>Tax (12%): <strong id="summaryTax">₹0</strong></p>
+            <p class="total">Total: <strong id="summaryTotal">₹0</strong></p>
+          </div>
+
+          <div class="summary-note muted">
+            This demo simulates payment. On submit you'll be redirected to a thank you page with a generated Order ID.
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:hello@bikes.example">hello@bikes.example</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Old Garage Lane, Motor City</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <p><a href="#">Instagram</a> • <a href="#">Facebook</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="yearPay"></span> bikes — Vintage Motorcycle Co.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearPay').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
