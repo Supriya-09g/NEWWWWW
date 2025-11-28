@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>bikes — Thank You</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body class="page-thankyou">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">bikes</span>
+        <small class="tag">Old-School Motorcycle Co.</small>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Bikes</a>
+        <a href="payments.html" class="nav-link">Payments</a>
+        <a href="thankyou.html" class="nav-link active">Thank You</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="thankyou-hero vintage-hero">
+      <div class="container hero-center">
+        <div class="thank-card card">
+          <h1>Thank You Rider!</h1>
+          <p class="lead">Your booking is confirmed.</p>
+
+          <p class="order-id" id="displayOrderId">Order ID: <strong>—</strong></p>
+
+          <div class="thank-actions">
+            <a class="btn" href="index.html">Back to Home</a>
+            <a class="btn btn-outline" href="products.html">Browse More Bikes</a>
+          </div>
+
+          <p class="muted small">A confirmation email (simulated) has been sent to the email you provided.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:hello@bikes.example">hello@bikes.example</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Old Garage Lane, Motor City</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <p><a href="#">Instagram</a> • <a href="#">Facebook</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="yearThanks"></span> bikes — Vintage Motorcycle Co.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearThanks').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
