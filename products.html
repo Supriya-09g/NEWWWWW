@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>bikes — Classic Bikes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body class="page-products">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">bikes</span>
+        <small class="tag">Old-School Motorcycle Co.</small>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link active">Bikes</a>
+        <a href="payments.html" class="nav-link">Payments</a>
+        <a href="thankyou.html" class="nav-link">Thank You</a>
+      </nav>
+
+      <div class="cart-preview" id="miniCartPreview">
+        <button id="openCartBtnTop" class="btn-ghost">Cart (<span id="cartCountTop">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container products-hero">
+      <h1>Classic Bikes — Curated Collection</h1>
+      <p class="sub">A selection of premium, vintage-inspired motorcycles ready for booking.</p>
+    </section>
+
+    <section class="container bikes-grid" aria-labelledby="bikesGridTitle">
+      <h2 id="bikesGridTitle">Our Bikes</h2>
+
+      <div class="grid" id="productsGrid">
+        <!-- Product cards: full list, each with add/book buttons. main.js will handle data attributes -->
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc9c9b9d7a8b4c3a2f0b2d4e1a2f0b3" alt="Royal Enfield type">
+          <div class="product-info">
+            <h3>Royal Enfield Classic 500 — Vintage Edition</h3>
+            <p class="desc">Authentic cruiser vibes with brass detailing and classic springs.</p>
+            <p class="price">₹ 1,95,000</p>
+            <div class="product-actions">
+              <button class="btn" data-sku="re-classic500" data-title="Royal Enfield Classic 500 — Vintage Edition" data-price="195000">Add to Cart</button>
+              <a class="btn btn-outline" href="payments.html" data-sku="re-classic500">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=da5a0aeb7b3a965c1f2e4f3d928a2a9d" alt="Triumph style">
+          <div class="product-info">
+            <h3>Triumph-Style Retro 650</h3>
+            <p class="desc">Twin-cylinder hum and classic hand-stitched leather seat.</p>
+            <p class="price">₹ 2,55,000</p>
+            <div class="product-actions">
+              <button class="btn" data-sku="triumph650" data-title="Triumph-Style Retro 650" data-price="255000">Add to Cart</button>
+              <a class="btn btn-outline" href="payments.html" data-sku="triumph650">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e95?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=c2d1ff4e4951f1a3b1f6d0b2b5f6f9c4" alt="Harley retro">
+          <div class="product-info">
+            <h3>Harley-Inspired Retro Cruiser</h3>
+            <p class="desc">Heavy, refined cruiser with deep chrome and rusty patina finishes.</p>
+            <p class="price">₹ 3,10,000</p>
+            <div class="product-actions">
+              <button class="btn" data-sku="harleycruiser" data-title="Harley-Inspired Retro Cruiser" data-price="310000">Add to Cart</button>
+              <a class="btn btn-outline" href="payments.html" data-sku="harleycruiser">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img src="https://images.unsplash.com/photo-1523958203904-cdcb402031fd?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7d1b6d8f3f9a5ed1f9b4db6b5fccb2a9" alt="Custom bobber">
+          <div class="product-info">
+            <h3>Custom Bobber — Copper Limited</h3>
+            <p class="desc">Bespoke bobber with aged copper panels and custom exhaust note.</p>
+            <p class="price">₹ 2,75,000</p>
+            <div class="product-actions">
+              <button class="btn" data-sku="custombobber" data-title="Custom Bobber — Copper Limited" data-price="275000">Add to Cart</button>
+              <a class="btn btn-outline" href="payments.html" data-sku="custombobber">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Add more bikes as needed -->
+      </div>
+    </section>
+
+    <!-- Cart drawer (hidden by default) -->
+    <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+      <div class="cart-drawer-inner">
+        <h4>Your Booking Cart</h4>
+        <div id="cartItemsContainer" class="cart-items"></div>
+        <div class="cart-totals">
+          <p>Subtotal: <strong id="cartSubtotal">₹0</strong></p>
+        </div>
+        <div class="cart-actions">
+          <a href="payments.html" class="btn" id="checkoutBtn">Proceed to Payment</a>
+          <button class="btn btn-outline" id="clearCartBtn">Clear Cart</button>
+          <button class="btn-ghost" id="closeCartBtn">Close</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:hello@bikes.example">hello@bikes.example</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Old Garage Lane, Motor City</p>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <p><a href="#">Instagram</a> • <a href="#">Facebook</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© <span id="yearProd"></span> bikes — Vintage Motorcycle Co.</small>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('yearProd').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
