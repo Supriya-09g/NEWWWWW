@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>bikes — Born to Ride Retro</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
+</head>
+<body class="page-home">
+  <!-- Header / Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-logo">bikes</span>
+        <small class="tag">Old-School Motorcycle Co.</small>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="products.html" class="nav-link">Bikes</a>
+        <a href="payments.html" class="nav-link">Payments</a>
+        <a href="thankyou.html" class="nav-link">Thank You</a>
+      </nav>
+
+      <div class="cart-preview" id="miniCartPreview">
+        <button id="openCartBtn" class="btn-ghost">Cart (<span id="cartCount">0</span>)</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero vintage-hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Wild Ride. Classic Soul.</h1>
+          <p class="lead">bikes — Born to Ride Retro</p>
+          <p class="hero-sub">Hand-built mods • Heavy metal finishes • Timeless engine roar</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="products.html">Browse Bikes</a>
+            <a class="btn btn-outline" href="payments.html">Book Now</a>
+          </div>
+
+          <ul class="features-list">
+            <li><strong>Retro Engines</strong> — Pure mechanical charm</li>
+            <li><strong>Hand-Built Mods</strong> — Custom, one by one</li>
+            <li><strong>Classic Spares</strong> — Restorations & originals</li>
+          </ul>
+        </div>
+
+        <div class="hero-image" aria-hidden="true">
+          <!-- Unsplash vintage motorcycle image -->
+          <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c1b6b6a6a2b9f8d3b50d4e4a4b7d3f1"
+               alt="Classic vintage motorcycle on a garage floor" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Intro -->
+    <section class="container intro-section">
+      <div class="intro-card">
+        <h2>Built for Riders Who Respect the Past</h2>
+        <p>
+          At <strong>bikes</strong> we celebrate old-school motorcycle culture — the smell of oil,
+          heavy steel, and slower roads. Our selection is curated for riders who love authenticity:
+          Royal Enfield-style classics, European retro roadsters, and custom cafe racers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Bikes -->
+    <section class="container featured-section" aria-labelledby="featuredTitle">
+      <h3 id="featuredTitle">Featured Classics</h3>
+      <div class="cards-grid" id="featuredGrid">
+        <!-- We'll show three featured cards manually -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=da5a0aeb7b3a965c1f2e4f3d928a2a9d" alt="Classic 500 vintage">
+          <div class="card-body">
+            <h4>Classic 500 — Vintage Edition</h4>
+            <p class="price">₹ 1,95,000</p>
+            <div class="card-actions">
+              <button class="btn small" data-sku="classic500" data-title="Classic 500 — Vintage Edition" data-price="195000">Add to Cart</button>
+              <a class="btn small btn-outline" href="payments.html" data-sku="classic500">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1515542622106-78bda8ba0e95?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=c2d1ff4e4951f1a3b1f6d0b2b5f6f9c4" alt="Cafe racer">
+          <div class="card-body">
+            <h4>Cafe Racer • Roadster</h4>
+            <p class="price">₹ 2,45,000</p>
+            <div class="card-actions">
+              <button class="btn small" data-sku="caferacer" data-title="Cafe Racer • Roadster" data-price="245000">Add to Cart</button>
+              <a class="btn small btn-outline" href="payments.html" data-sku="caferacer">Book Now</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abc9c9b9d7a8b4c3a2f0b2d4e1a2f0b3" alt="Retro cruiser">
+          <div class="card-body">
+            <h4>Retro Cruiser — Midnight Rust</h4>
+            <p class="price">₹ 2,10,000</p>
+            <div class="card-actions">
+              <button class="btn small" data-sku="retrocruiser" data-title="Retro Cruiser — Midnight Rust" data-price="210000">Add to Cart</button>
+              <a class="btn small btn-outline" href="payments.html" data-sku="retrocruiser">Book Now</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Testimonials / Reviews -->
+    <section class="container reviews-section">
+      <h3>Riders Say</h3>
+      <div class="reviews">
+        <blockquote class="review">
+          "Bought a restored roadster — the feeling is authentic. Attention to detail is superb."
+          <cite>— Arjun, Pune</cite>
+        </blockquote>
+
+        <blockquote class="review">
+          "Booking was smooth and team handled the paperwork like pros."
+          <cite>— Meera, Jaipur</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:hello@bikes.example">hello@bikes.example</a></p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Location</h4>
+        <p>Old Garage Lane, Block B, Motor City</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <p><a href="#">Instagram</a> • <a href="#">Facebook</a> • <a href="#">YouTube</a></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <small>© <span id="year"></span> bikes — Vintage Motorcycle Co. — Built with steel & soul.</small>
+    </div>
+  </footer>
+
+  <script>
+    // small runtime that sets year (keeps index.html self-contained while main.js handles app logic)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
